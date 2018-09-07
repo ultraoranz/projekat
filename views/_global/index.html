@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="sr">
+
+<head>
+    <title>Kozmeticki salon - {% block naslov %}Pocetna{% endblock %}</title>
+    <link rel="icon" href="{{BASE}}assets/images/favicon.png" type="image/x-icon" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{BASE}}assets/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{BASE}}assets/libs/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="{{BASE}}assets/css/main.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <!-- 
+        <header>
+
+            <div class="row">
+                <div class="col col-sm">
+                    <a href="{{BASE}}">
+                        <img src="{{BASE}}assets/images/logo.jpg" alt="logo" width="60%">
+                    </a>
+                </div>
+                <div class="col col-sm">
+                    <div class="social-icons">
+                        <div class="text-right center-block">
+                            <br>
+                            <a href="https://www.facebook.com/bootsnipp">
+                                <i id="social-fb" class="fa fa-facebook-square fa-3x social"></i>
+                            </a>
+                            <a href="https://twitter.com/bootsnipp">
+                                <i id="social-tw" class="fa fa-twitter-square fa-3x social"></i>
+                            </a>
+                            <a href="https://plus.google.com/+Bootsnipp-page">
+                                <i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i>
+                            </a>
+                            <a href="mailto:bootsnipp@gmail.com">
+                                <i id="social-em" class="fa fa-envelope-square fa-3x social"></i>
+                            </a>
+                            <a href="{{BASE}}cart/{{cart_model.cart_model_id}}" style="font-size: 43px">
+                                <i class="fa fa-shopping-cart social size"></i>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="{{BASE}}">
+                            <i class="fa fa-home"></i> Pocetna</a> {% for category in categories %}
+                        <a class="nav-item nav-link" href="{{BASE}}category/{{category.category_id}}">
+                            <i class="fa fa-cube"></i> {{category.name|escape|title}}</a> {% endfor %}
+                        <!--  <a class="nav-item nav-link" href="{{BASE}}contact"><i class="fa fa-phone"></i>Kontakt</a>
+                                <a class="nav-item nav-link" href="{{BASE}}log-out"><i class="fa fa-sign-out"></i>Odjava</a>    -->
+
+        <!-- </div>
+    </div>
+    <form action="{{BASE}}user/login/" method="get">
+        <button type="submit" class="btn btn-warning navbar-btn">Prijava</button>
+    </form>
+    </nav> -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="{{BASE}}">
+                        <img src="{{BASE}}assets/images/logo.jpg" alt="logo" width="60%">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav inl" style="display: inline;">
+                    <li class="active">
+                        <a class="nav-item nav-link" href="{{BASE}}">
+                            <i class="fa fa-home"></i> Pocetna</a>
+                    </li>
+                    {% for category in categories %}
+                    <li>
+                        <a class="nav-item nav-link" href="{{BASE}}category/{{category.category_id}}">
+                            <i class="fa fa-cube"></i> {{category.name|escape|title}}</a> {% endfor %}
+                    </li>
+                    <!--  <a class="nav-item nav-link" href="{{BASE}}contact"><i class="fa fa-phone"></i>Kontakt</a>
+                                <a class="nav-item nav-link" href="{{BASE}}log-out"><i class="fa fa-sign-out"></i>Odjava</a>    -->
+                    <a href="{{BASE}}cart/{{cart_model.cart_model_id}}" style="font-size: 43px">
+                        <i class="fa fa-shopping-cart social size"></i>
+                    </a>
+                </ul>
+                <form action="{{BASE}}user/login/" method="get">
+                    <button type="submit" class="btn btn-warning navbar-btn">Prijava</button>
+                </form>
+            </div>
+
+        </nav>
+
+        </header>
+
+
+
+        <main>
+            {% block main %} {% endblock %}
+        </main>
+
+
+        <footer>
+
+            <div class="row">
+                <div class="footer-top col col-sm-12 col-md-12">
+
+                    <a href="{{BASE}}">
+                        <img class="slika" src="{{BASE}}assets/images/logo.jpg" alt="logo">
+                    </a>
+
+
+                    <p class="text">Kontakt</p>
+                    <p class="text">Kraljevica Marka b.b.</p>
+                    <p class="text">11000, Beograd</p>
+                    <p class="text">Tel: 011-123-456</p>
+                    <p class="text">office@beauty.rs</p>
+
+
+
+
+
+                </div>
+            </div>
+            <div class="footer-lower">
+                <div class="col-sm-12">
+                    <hr>
+                </div>
+                <div class="col-sm-12">
+                    <p class="text-center">Sva prava zadržana &copy; 2018 | Nemanja Simić</p>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+
+
+    <script src="{{BASE}}assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{BASE}}assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

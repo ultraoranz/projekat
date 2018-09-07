@@ -1,0 +1,20 @@
+{% extends "_global/index.html" %} {% block main %}
+<div class="container">
+    <div class="row">
+        <a href="{{BASE}}user/profile" class="col-4 col-sm-4 col-md-4 text-center dash">Nazad na Dashboard</a>
+        <a href="{{ BASE }}user/profiles/add" class="col-4 col-sm-4 col-md-4 text-center dash">Dodaj novu kategoriju</a>
+        <a href="{{ BASE }}user/profiles/delete" class="col-4 col-sm-4 col-md-4 text-center dash">Obrisi kategoriju</a>
+    </div>
+
+    <h2 class="text-center">Kategorije:</h2>
+    <div class="row">
+
+        {% for profile in profiles %}
+
+        <a href="{{ BASE }}user/profiles/edit/{{ profile.profile_id }}" class="col-6 col-sm-3 col-md-3 text-center dash">
+            {{ profile.name|escape }}
+        </a> {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

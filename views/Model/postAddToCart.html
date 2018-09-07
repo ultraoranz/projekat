@@ -1,0 +1,22 @@
+{% extends "_global/index.html" %} {% block main %}
+<div>
+    <div class="text-center">
+        <h4>{{message}}</h4>
+    </div>
+    <div class="btn-group btn-group-justified ">
+        <a href="{{BASE}}model/add/{{model.model_id}} ">
+            <button type="button " class="btn btn-primary " style="margin-right: 50px;">Vratite se na prethodnu</button>
+        </a>
+
+        <a href="{{BASE}}cart " style="color:white; ">
+            <button type="button " class="btn btn-primary " style="margin-right: 50px;">Idite na korpu.
+            </button>
+        </a>
+
+        <a href="{{BASE}}" style="color:white; ">
+            <button type="button " class="btn btn-primary ">Idite na početnu
+            </button>
+        </a>
+    </div>
+</div>
+{% endblock %}

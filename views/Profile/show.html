@@ -1,0 +1,21 @@
+{% extends "_global/index.html" %} {% block main %}
+<div class="container">
+    <h1 class="text-center">
+        {{profile.name|escape}}
+    </h1>
+    <h3 class="text-center">Spisak modela napravljenih od ovog profila: </h3>
+    <div class="row">
+
+        {% for model in modelInProfile %}
+        <div class="card col-12 col-sm-12 col-md-6 text-center">
+
+            <a href="{{BASE}}profile/model/{{ model.model_id}}">
+                <h3>{{ model.name|escape }}</h3>
+                <br>
+                <img src="{{BASE}}{{model.picture}}" alt="{{model.name}}">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %} {% block naslov %} {{profile.name|escape}} {% endblock %}

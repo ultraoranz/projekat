@@ -1,0 +1,20 @@
+{% extends "_global/index.html" %} {% block main %}
+<div class="container">
+    <div class="row">
+        <a href="{{BASE}}user/profile" class="col-4 col-sm-4 col-md-4 text-center dash">Nazad na Dashboard</a>
+        <a href="{{ BASE }}user/categories/add" class="col-4 col-sm-4 col-md-4 text-center dash">Dodaj novu kategoriju</a>
+        <a href="{{ BASE }}user/categories/delete" class="col-4 col-sm-4 col-md-4 text-center dash">Obrisi kategoriju</a>
+    </div>
+
+    <h2 class="text-center">Kategorije:</h2>
+<div class="row">
+        
+            {% for category in categories %}
+           
+                <a href="{{ BASE }}user/categories/edit/{{ category.category_id }}" class="col-12 col-sm-6 col-md-6 text-center dash">
+                    {{ category.name|escape }}
+                </a> {% endfor %}
+        
+    </div>
+</div>
+{% endblock %}

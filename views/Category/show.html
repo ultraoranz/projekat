@@ -1,0 +1,22 @@
+{% extends "_global/index.html" %} {% block main %}
+<h1 class="text-center">
+    {{category.name|escape}}
+</h1>
+<h2 class="text-center">Spisak usluga u ovoj kategoriji je: </h2>
+<div class="row">
+    {% for profile in profileInCategory %}
+    <div class="card col-12 col-md-6 text-center">
+        <div class="card-body">
+
+            <a href="{{BASE}}profile/{{ profile.profile_id}}">
+                <h3>{{ profile.name|escape }}</h3>
+                <br>
+                <img src="{{BASE}}{{profile.picture}}" alt="{{profile.name}}">
+                <br>
+            </a>
+            <p> {{ profile.description|escape }}</p>
+            <br>
+            <p>Cena po usluzi je: {{profile.price_beauty}} RSD</p>
+        </div>
+    </div>
+    {% endfor %}</div> {% endblock %} {% block naslov %} {{category.name|escape}} {% endblock %}

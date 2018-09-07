@@ -1,0 +1,55 @@
+{% extends "_global/index.html" %} {% block main %}
+<h4 class="text-center">Spisak u korpi je: </h4>
+
+<div class="container">
+    <div class="row">
+
+
+        <table class="table table-bordered table-hover text-center table-responsive w-100 d-block d-md-table">
+            <thead>
+                <tr>
+
+                    <th scope="col">Opis Usluge</th>
+                    <th scope="col">Cena</th>
+                    <th scope="col">Ukloniti</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for pom in cartModelModel %}
+                <tr>
+
+                    <td>
+                        <a href="{{BASE}}profile/model/{{pom.model_id}}">
+                            {{ pom.name }}
+                        </a>
+                    </td>
+                    <td>
+                        <p>Cena po usluzi: {{pom.price_beauty}} RSD </p>
+                    </td>
+                    <td>
+                        <form action="{{BASE}}cart/" method="POST">
+                            <button type="submit" name="cart_model_id" id="cart_model_id" value="{{pom.cart_model_id}}" class="cart_model_id btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                    {% endfor %}
+
+
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+
+    </div>
+</div>
+<form action="{{BASE}}cart/order/" class="text-center">
+    <button type="submit" class="btn btn-primary">Naruci proizvode</button>
+</form>
+
+{% endblock %} {% block naslov %} {{category.name|escape}} {% endblock %}
